@@ -1,7 +1,11 @@
 console.log('vue.config.js')
 const { defineConfig } = require('@vue/cli-service')
 const path = require("path");
-module.exports = defineConfig({
+module.exports =module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/my-project/'
+    : '/'
+}, defineConfig({
   // outputDir: path.resolve(__dirname, "../public/dc/"),
   //outputDir: "/var/www/html/dc",
   transpileDependencies: true,
